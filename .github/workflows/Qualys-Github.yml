@@ -1,0 +1,32 @@
+name: QualysWASGitHub
+on:
+  workflow_dispatch:  # Allows manual trigger
+  schedule:
+    - cron: '30 4 * * *'  # Runs every day at 10:00 AM IST (UTC+5:30)
+
+jobs:
+  Qualys_was_scan:
+    runs-on: ubuntu-latest
+    name: Qualys WAS Scan
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Run Qualys WAS scan
+        uses: Qualys/github-action-qwas@main
+        id: was
+        with:
+          API_SERVER: https://qualysapi.qg3.apps.qualys.com
+          QUALYS_USERNAME: rsc3sr
+          QUALYS_PASSWORD: Pract1$e
+          WEBAPP_ID: 913249217
+          SCAN_NAME: GitHub_VulnLab_Scan
+          SCAN_TYPE: DISCOVERY
+          AUTH_RECORD: none
+          OPTION_PROFILE: useDefault
+          FAIL_ON_SCAN_ERROR: false
+          WAIT_FOR_RESULT: true
+          FILE_TYPE: PDF
