@@ -24,7 +24,7 @@ jobs:
           QUALYS_PASSWORD: Pract1$e
           WEBAPP_ID: 913249217
           SCAN_NAME: GitHub_VulnLab_Scan
-          SCAN_TYPE: DISCOVERY
+          SCAN_TYPE: VULNERABILITY
           AUTH_RECORD: none
           OPTION_PROFILE: useDefault
           FAIL_ON_SCAN_ERROR: false
