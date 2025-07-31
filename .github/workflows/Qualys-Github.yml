@@ -27,6 +27,9 @@ jobs:
           SCAN_TYPE: VULNERABILITY
           AUTH_RECORD: none
           OPTION_PROFILE: useDefault
-          FAIL_ON_SCAN_ERROR: false
+          SEVERITY_LEVEL: 5
+          SEVERITY_CHECK: true
+          FAIL_ON_SCAN_ERROR: true
           WAIT_FOR_RESULT: true
           FILE_TYPE: PDF
+          
